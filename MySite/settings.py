@@ -127,7 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Manually Added
-STATIC_ROOT=os.path.join(BASE_DIR,"static/herokustatic")
+STATIC_ROOT=os.path.join(BASE_DIR,"herokustatic")
 
 
 STATICFILES_DIRS = [
