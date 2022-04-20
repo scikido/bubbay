@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from home.models import Contact
+from home.models import Submissons
 from datetime import datetime
 from django.contrib import messages
 # Create your views here.
@@ -15,11 +15,11 @@ def services(request):
 
 def contact(request):
     if request.method=="POST":
-        name=request.POST.get('name')
-        email=request.POST.get('email')
-        phone=request.POST.get('phone')
-        desc=request.POST.get('desc')
-        contact=Contact(name=name, phone=phone,email=email,desc=desc,date=datetime.today())
+        name_author=request.POST.get('name')
+        email_author=request.POST.get('email')
+        credit_author=request.POST.get('link')
+        content=request.POST.get('desc')
+        contact=Submissons(name_author=name_author,email_author=email_author,credit_author=credit_author,content=content,date=datetime.today())
         contact.save()
-        messages.success(request,'Your Message has succesfully submitted!')
+        messages.success(request,'Your Content has succesfully submitted!')
     return render(request,"contact.html")
