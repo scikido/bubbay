@@ -1,7 +1,6 @@
-{% extends 'base.html' %} {% block title %}Contact Us{% endblock title %} {% block body %}
+{% extends 'base.html' %} {% block title %} Contact Us {% endblock title %} {% block body %}
 <div class="container-fluid px-0" mb-3>
     <img src="/static/img/contact.jpg" class="d-block w-100 mx-0">
-
 </div>
 <div class="container mb-3 my-2">
     <h2 class="text-center">Contact Us</h2>
@@ -12,11 +11,21 @@
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name">
         </div>
         <div class="mb-3">
-            <label for="url" class="form-label">Credit Link</label>
-            <input type="url" class="form-control" name="link" placeholder="Your Social Handle">
+            <label for="title" class="form-label">Title of Musing</label>
+            <input type="text" class="form-control" name="title" placeholder="My Dream World ✍🏼">
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">Email address <p class="text-muted d-inline">(for contacting purpose, will not be shared publicly)</p></label>
+            <label for="url" class="form-label">Credit Link</label>
+            <input type="url" class="form-control" name="link" placeholder="Your Social Handle (📷,👻,etc)">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">
+                    Email address
+                    <p class="text-muted d-inline">
+                        (for contacting purpose,
+                        will not be shared publicly)
+                    </p>
+                </label>
             <input type="email" class="form-control" name="email" placeholder="name@example.com">
         </div>
         <div class="mb-3">

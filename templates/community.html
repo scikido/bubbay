@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+    Community
+{% endblock title %}
+{% block body %}
+    <div class="container">
+        <h1>Submissions To Review</h1>
+        {% for submissions in submissions %}
+            <div class="card text-center rounded-bottom mb-sm-2">
+                <div class="card-header">{{ submissions.name_author }}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ submissions.content_title }}</h5>
+                    <p class="card-text">
+                        {{ submissions.content }}
+                    </p>
+                    <a href="{{ submissions.credit_author }}" class="btn btn-primary">See More of Author</a>
+                </div>
+                <div class="card-footer text-muted">{{ submissions.date }}</div>
+                <br />
+            </div>
+        {% endfor %}
+    </div>
+{% endblock body %}

@@ -13,10 +13,12 @@ from django.db import models
 
 class Submissons(models.Model):
     name_author=models.CharField(max_length=122)
-    credit_author=models.CharField(max_length=122)
-    email_author=models.EmailField(max_length=254)
+
+    credit_author=models.CharField(max_length=122,null=True)
+    email_author=models.EmailField(max_length=254,null=True)
+    content_title=models.CharField(max_length=50,null=True)
     content=models.CharField(max_length=512)
     date=models.DateField()
 
     def __str__(self):
-        return self.name_author
+        return self.content_title
