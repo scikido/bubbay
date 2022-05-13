@@ -1,10 +1,11 @@
 from django.shortcuts import redirect, render
-from home.models import Submissons
+from home.models import Messages, Submissons
 from datetime import datetime
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
+import string
 # Create your views here.
 
 
@@ -68,6 +69,32 @@ def about(request):
 
 def services(request):
     return render(request, "services.html")
+
+def decode(request):
+    
+    if request.method == "POST":
+        encode = request.POST.get('encode')
+        print(encode)
+        encode = [i for i in encode]
+        d = [i for i in string.ascii_lowercase]
+        r_d = [i for i in string.ascii_lowercase]
+        r_d.reverse()
+        ind = []
+        for i in encode:
+            ind.append(d.index(i))
+
+        decod = []
+        print("gefwifgv")
+        for i in ind:
+            decod.append(r_d[i])
+        miusg="".join(decod)
+        print(miusg)
+        
+        # print(miusg)
+        # msg = Messages(encode=encode, decoded_msg=miusg)
+        # msg.save()
+        return render(request, 'decoder.html', {'miusg': miusg})
+    return render(request, 'decoder.html')
 
 
 def contact(request):

@@ -11,5 +11,6 @@ urlpatterns = [
     path("community/",views.community,name="community"),
     path("login/",views.loginPage, name="login"),
     path("register/",views.registerPage, name="register"),
-    path("logout/",views.logoutUser, name="logout")
+    path("logout/",views.logoutUser, name="logout"),
+    path("decoder/",views.decode, name="decoder")
 ]
