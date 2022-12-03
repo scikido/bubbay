@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'bubbay',
         'USER': 'sarva',
-        'PASSWORD': 'sarva2004',
+        'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': 'database-1.c1dy31pgn9js.us-east-2.rds.amazonaws.com',
         'PORT': '5432',
     }
