@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-_7z&lejc8c*w10ca9&f20k7(v8vd%)5pl=_z%k^ol++z)hp!j+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','vercel.com']
 
 
 # Application definition
@@ -76,22 +76,22 @@ WSGI_APPLICATION = 'MySite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db_1.sqlite3',
-    }
-}
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'bubbay',
-#         'USER': 'sarva',
-#         'PASSWORD': os.getenv('DB_PASSWORD'),
-#         'HOST': 'database-1.c1dy31pgn9js.us-east-2.rds.amazonaws.com',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db_1.sqlite3',
 #     }
 # }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD':  "6cAZj4i4uRvnIgRe",#os.getenv('DB_PASSWORD'),
+        'HOST': 'db.qgxcmwuisscayzpchjdy.supabase.co',
+        'PORT': '5432',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
